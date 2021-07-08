@@ -1,0 +1,24 @@
+{
+  "name": "WebAssembly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "ws",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liunian-demos/WebAssembly.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liunian-demos/WebAssembly/issues"
+  },
+  "homepage": "https://github.com/liunian-demos/WebAssembly#readme",
+  "devDependencies": {
+    "local-web-server": "^5.0.0"
+  }
+}

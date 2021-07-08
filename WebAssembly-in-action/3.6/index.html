@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manual load & run wasm</title>
+</head>
+<body>
+    <script>
+        const importObject = {
+            env: {
+                memory: new WebAssembly.Memory({ initial: 1, maximum: 10 }),
+                __memory_base: 0,
+                __table_base: 0,
+            }
+        };
+
+        WebAssembly.instantiateStreaming(fetch("side_module.wasm"), importObject)
+            .then(res => {
+                console.log(res);
+               const value = res.instance.exports.increment(17);
+               console.log('17 inc = ', value);
+               console.log('17 dec = ', res.instance.exports.decrement(17));
+            });
+    </script>
+</body>
+</html>
